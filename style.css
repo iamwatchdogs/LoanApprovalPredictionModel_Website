@@ -207,7 +207,7 @@ button:focus, button:active, button:hover{
 }
 
 /* Responsive-ness: mobile view */
-@media (max-width:1100px) and (min-width:360px){
+@media (max-width:1100px) and (min-width:400px){
     .body::before {
         content: '';
         background-color: #6C63FF;
@@ -255,7 +255,56 @@ button:focus, button:active, button:hover{
         height: 40px;
     }
 }
-@media (max-width:360px) {
+@media (max-width:400px) and (min-width:200px) {
+    .body::before {
+        content: '';
+        background-color: #6C63FF;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .body main .container{
+        width: 90vw;
+        min-height: 720px;
+        min-width: 220px;
+        height: 175vh;
+        flex-direction: column;
+        position: relative;
+        left: 17px;
+        top: 45vh;
+    }
+    .mobile-view {
+        display: block;
+    }
+    .body main .container #page-details {
+        width: 45vw;
+        height: 50vh;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+        flex-basis: 0;
+        top: 40vh;
+    }
+    .body main .container .main-form .form-horizontal{
+        width: 60vw;
+        height: 110vh;
+        min-width: 200px;
+        left: 0;
+        top: 90vh;  
+    }
+    .select {
+        width: 50vw;
+        height: 2em;
+    }
+    button {
+        width: 75px;
+        height: 40px;
+    }
+}
+@media (max-width:200px){
     .body::before {
         content: 'Can not Display Page in these dimennsions';
         background-color: #6C63FF;

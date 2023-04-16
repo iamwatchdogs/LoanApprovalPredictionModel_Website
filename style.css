@@ -150,16 +150,16 @@ main #page-details {
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    flex-basis: 464px   ;
+    flex-basis: 464px;
     margin: 10px 80px;
     font-size: 1.1rem;
     position: relative;
-    right: 168px;
+    right: 5vw;
+    flex-shrink: 3;
 }
 .body main .container #page-details img {
-    margin: 25px;
-    height: 255px;
-    width: 300px;
+    height: 23vh;
+    width: 23vh;
     display: block;
 }
 .body main .container .main-form .form-horizontal {
@@ -172,7 +172,10 @@ main #page-details {
     background-color: #6C63FF;
     box-shadow: 0 20px 25px rgba(0,0,0,0.50);
     border-radius: 12px;
+    flex-basis: 464px;
     position: relative;
-    left: 60px;
+    left: 2vw;
     top: 15px;
+    flex-grow: 3;
+    min-width: 365px;
 }

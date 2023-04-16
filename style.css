@@ -1,0 +1,267 @@
+/* Google Fonts - Nunito,Dosis */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mobile-view {
+    display: none;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: rgb(202, 196, 223);
+}
+.body::before {
+    content: '';
+    background-color: #6C63FF;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    color: #000000;
+    justify-content: center;
+    font-family: 'Dosis', sans-serif;
+    opacity: 0.75;
+}
+header, main:hover + footer p {
+    display: none;
+}
+h2,h3,label,footer {
+    font-weight: bold;
+}
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+footer a:link:hover, footer a:active:hover {
+    color: #3391ff;
+}
+footer a:visited:hover {
+    color: #7a33ff;
+}
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.5em;
+}
+.body {
+    width: 100vw;
+    height: 100vh;
+}
+.body main {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body main .container {
+    width: 80vw;
+    height: 72vh;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.25);
+    border-radius: 10px;
+}
+.body main .container #page-details {
+    width: 150vw;
+    height: 68vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-basis: 464px;
+    margin: 10px 80px;
+    font-size: 1.1rem;
+    position: relative;
+    right: 5vw;
+    flex-shrink: 3;
+}
+.body main .container #page-details img {
+    height: 23vh;
+    width: 23vh;
+    display: block;
+}
+.body main .container .main-form .form-horizontal {
+    width: 28vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #6C63FF;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.50);
+    border-radius: 12px;
+    flex-basis: 464px;
+    position: relative;
+    left: 2vw;
+    top: 15px;
+    flex-grow: 3;
+    min-width: 365px;
+}
+
+/* CSS for Form */
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: #5e59c0;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color:#fff;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+    display: none;
+}
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 2em;
+    line-height: 3;
+    background: #7d76fa;
+    overflow: hidden;
+    border-radius: .25em;
+}
+ .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: -7.5px;
+    right: 0;
+    padding: 0 1em;
+    background: #534cd8;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+.select:hover::after {
+    color: #6C63FF;
+}
+
+input[type=text]{
+    width: 70%;
+    border: 2px solid #473dff;
+    border-radius: 4px;
+    margin: 7px 0;
+    outline:none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+}
+  
+.select:active, input[type=text]:focus{
+    border-color: dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+button {
+    width: 160px;
+    height: 40px;
+    color: whitesmoke;
+    font-family: "Roboto", sans-serif;
+    background-color:rgb(85, 62, 231);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    margin: 0 3px;
+    padding: 0 2px;
+}
+
+button:focus, button:active, button:hover{
+    box-shadow: 0 0 20px #7d77ffa9;
+    background-color:rgb(99, 71, 255);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Responsive-ness: mobile view */
+@media (max-width:1100px) and (min-width:420px){
+    .body::before {
+        content: '';
+        background-color: #6C63FF;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .body main .container{
+        width: 90vw;
+        min-height: 720px;
+        min-width: 400px;
+        height: 175vh;
+        flex-direction: column;
+        position: relative;
+        top: 45vh;
+    }
+    .mobile-view {
+        display: block;
+    }
+    .body main .container #page-details {
+        width: 45vw;
+        height: 50vh;
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+        flex-basis: 0;
+        top: 25vh;
+    }
+    .body main .container .main-form .form-horizontal{
+        width: 85vw;
+        height: 110vh;
+        min-width: 270px;
+        left: 0;
+        top: 55vh;  
+    }
+}
+@media (max-width:419px) {
+    .body::before {
+        content: 'Can not Display Page in these dimennsions';
+        background-color: #6C63FF;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .mobile-view,
+    .body main .container,
+    .body main .container #page-details,
+    .body main .container .main-form .form-horizontal {
+        display: none;
+    }
+}

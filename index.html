@@ -1,137 +1,153 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="static/style.css">  
-    <title>loan app</title>
-  </head>
+    <head>
+        <!-- Basic metadata -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Open Graph Protocol -->
+        <meta property="og:title" content="Loan Approval Prediction Model">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">   <!-- Please Provide the url link after this web app is deployed in a server -->
+        <meta property="og:image" content="">
+
+        <!-- External links -->
+        <link rel="icon" href="src/icons8-artificial-intelligence-64.png" type="image/icon-x">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <title>loan app</title>
+    </head>
   
-  <body>
-    <div class="container main">
-        <div class="jumbotron" id="holder">
-            <h1 class='main_heading' align="center"><b>Loan Approval Prediction Model</b></h1>
-            <p align="center">This Web Based Application is processed by a Machine Learning Algorithm to  predict whether a loan would be approved or not.</p>
-            
-            <br>
-            
-            <div class="instructions" >
-                <h2>Instructions: </h2>
-                <p>1. Please Enter values for the following fields</p>
-                <p>2. click predict  [NOTE: 0 means No while 1 means Yes]</p>
-            </div>
-    
-            <form class="form-horizontal" action="/predict"method="POST">
-                <div class="form-group">
-                    <div class="col-sm-5">
-                        <label for="gender"><b>Gender: </b></label>
-                        <select class="form-control" type="number"  name="Gender" required="required">
-                            <option value="0">Gender:</option>
-                            <option value="1">male</option>
-                            <option value="0">female</option>
-                        </select>
-                    </div>
-                </div>
+    <body>
 
-                <div class="form-group">
-                    <div class="col-sm-5">
-                        <label for="married"><b>Marital Status: </b></label>
-                        <select class="form-control" type="number"  name="Married" required="required">
-                            <option value="0">Married:</option>
-                            <option value="1">yes</option>
-                            <option value="0">no</option>
-                        </select>
-                    </div>
-                </div>
-       
-                <!-- <div class="form-group">
-                    <div class="col-sm-10">
-                        <input  class="form-control" type="text" name="Dependents" placeholder="Dependents" required="required" />
-                    </div>
-                </div> -->
-    
-                <div class="form-group">
-                    <div class="col-sm-5">
-                        <label for="education"><b>Education: </b></label>
-                        <select class="form-control" type="number"  name="Education" required="required">
-                            <option value="0">Education:</option>
-                            <option value="1">Graduate</option>
-                            <option value="0">not Graduate</option>
-                        </select>
-                    </div>
-                </div>
+        <div class="body">
+            <!-- Page Header -->
+            <header>
+                <h1>Loan Approval Prediction Model</h1>
+            </header>
 
-                <div class="form-group">
-                    <div class="col-sm-5">
-                        <label for="employed"><b>Employed: </b></label>
-                        <select class="form-control" type="number" name="Self_Employed" required="required">
-                            <option value="0">Self Employed:</option>
-                            <option value="1">yes</option>
-                            <option value="0">no</option>
-                        </select>
-                    </div>
-                </div>
+            <!-- Main content of the page -->
+            <main>
+                <div class="container">
+                    <!-- Page Details -->
+                    <article id="page-details">
+                        <h2>Loan Approval Prediction Model</h2>
+                        <br class="mobile-view">
+                        <p>This Web Based Application is processed by a Machine Learning Algorithm to  predict whether a loan would be approved or not.</p>
+                        <br class="mobile-view">
+                        <section class="instructions" >
+                            <h3 id="Page-Instructions">Instructions: </h3>
+                            <ul aria-labelledby="Page-Instructions">
+                                <li>Please Enter proper values for the following fields.</li>
+                                <li>Prediction Model will only work when all the following fields are filled.</li>
+                                <li>Click Predict. [NOTE: 0 means No while 1 means Yes]</li>
+                                <li>Wait for the result.</li>
+                            </ul>
+                        </section>
+                        <br class="mobile-view">
+                        <br class="mobile-view">
+                        <img src="src/undraw_predictive_analytics_re_wxt8.svg" alt="predictive analytics img">
+                    </article>
 
-                <div class="form-group">
-                    <div class="col-sm-5">
-                        <label for="income"><b>Income: </b></label>
-                        <input  class="form-control" type= "text" name="ApplicantIncome" placeholder="Your Income" required="required" />
-                    </div>
-                </div>
-     
-                <div class="form-group">
-                    <div class="col-sm-5">
-                        <label for="CoapplicantIncome"><b>CoapplicantIncome: </b></label>
-                        <input  class="form-control" type="text" name="CoapplicantIncome" placeholder="Co-applicant(garantor)Income" required="required" />
-                    </div>
-                </div>
+                    <!-- Main Form -->
+                    <div class="main-form">
+                        <form class="form-horizontal" autocomplete="off" action="/predict" method="POST">
 
-                <div class="form-group">
-                    <div class="col-sm-5">
-                        <label for="loanamount"><b>Loan Amount: </b></label>
-                            <input  class="form-control" type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
-                        </div>
+                            <br>
+
+                            <label for="gender">Gender: </label>
+                            <div class="select">
+                                <select id="gender" name="Gender" required>
+                                    <option value="" selected disabled hidden>Gender:</option>
+                                    <option value="1">Male</option>
+                                    <option value="0">Female</option>
+                                </select>
+                            </div>
+
+                            <label for="married">Marital Status: </label>
+                            <div class="select">
+                                <select id="married" name="Married" required>
+                                    <option value="" selected disabled hidden>Married:</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                        
+                            <!-- <input  class="form-control" type="text" name="Dependents" placeholder="Dependents" required /> -->
+                        
+                            <label for="education">Education: </label>
+                            <div class="select">
+                                <select id="education" name="Education" required>
+                                    <option value="" selected disabled hidden>Education:</option>
+                                    <option value="1">Graduate</option>
+                                    <option value="0">Not a Graduate</option>
+                                </select>
+                            </div>
+
+                            <label for="employed">Employed: </label> 
+                            <div class="select">
+                                <select id="employed" name="Self_Employed" required>
+                                    <option value="" selected disabled hidden>Self Employed:</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+
+                            <label for="income">Income: </label> 
+                            <input type= "text" pattern="[0-9]+" id="income" name="ApplicantIncome" placeholder="Your Income" required>
+
+                            <label for="CoapplicantIncome">Coapplicant Income: </label> 
+                            <input type="text" pattern="[0-9]+" id="CoapplicantIncome" name="CoapplicantIncome" placeholder="Co-applicant (garantor) Income" required>
+
+                            <label for="loanamount">Loan Amount: </label> 
+                            <input type="text" pattern="[0-9]+" id="loanamount" name="LoanAmount" placeholder="Loan Amount" required>
+
+                            <label for="loanamountterm">Loan Amount Term: </label>
+                            <div class="select"> 
+                                <select id="loanamountterm" name="Loan_Amount_Term" required>
+                                    <option value="" selected disabled hidden>Loan term:</option>
+                                    <option value="240">6 Months</option>
+                                    <option value="360">12 Months</option>
+                                </select>
+                            </div>
+
+                            <label for="credithistory">Credit History: </label> 
+                            <div class="select">
+                                <select id="credithistory" name="Credit_History" required>
+                                    <option value="" selected disabled hidden>Credit History:</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+
+                            <label for="propertyarea">Property Area: </label> 
+                            <div class="select">
+                                <select hid="propertyarea" name="Property_Area" required>
+                                    <option value="" selected disabled hidden>Property_Area:</option>
+                                    <option value="2">Urban</option>
+                                    <option value="1">Semi-Urban</option>
+                                    <option value="0">Rural</option>
+                                </select>
+                            </div>
+
+                            <br>
+
+                            <div class="buttons">
+                                <button type="submit">PREDICT</button>
+                                <button type="reset">RESET</button>
+                            </div>
+
+                            <br>
+
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-5">
-                            <label for="loanamountterm"><b>Loan Amount Term: </b></label>
-                            <select class="form-control" type="number" name="Loan_Amount_Term" required="required">
-                                <option value="0">loan term:</option>
-                                <option value="240">6 months</option>
-                                <option value="360">12 months</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-5">
-                            <label for="credithistory"><b>Credit History: </b></label>
-                            <select class="form-control" type="number"  name="Credit_History" required="required">
-                                <option value="0">Credit History:</option>
-                                <option value="1">yes</option>
-                                <option value="0">no</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-5">
-                            <label for="propertyarea"><b>Property Area: </b></label>
-                            <select class="form-control" type="number" name="Property_Area" required="required">
-                                <option value="0">Property_Area:</option>
-                                <option value="2">urban</option>
-                                <option value="1">semiurban</option>
-                                <option value="0">rural</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="button btn btn-default">PREDICT</button>
-                        </div>
-                    </div>
-                </form>
-                <h2 class="result"></h2>
-            </div>
+                </div>
+            </main>
+
+            <!-- Page footer -->
+            <footer>
+                <p>HTML/CSS done by Naveen and <a href="https://github.com/iamwatchdogs" target="_blank" title="goto @iamwatchdogs">Shamith</a></p>
+            </footer>
         </div>
     </body>
 </html>

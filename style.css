@@ -179,3 +179,88 @@ main #page-details {
     flex-grow: 3;
     min-width: 365px;
 }
+
+/* CSS for Form */
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: #5e59c0;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color:#fff;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+    display: none;
+}
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 2em;
+    line-height: 3;
+    background: #7d76fa;
+    overflow: hidden;
+    border-radius: .25em;
+}
+ .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: -7.5px;
+    right: 0;
+    padding: 0 1em;
+    background: #534cd8;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+.select:hover::after {
+    color: #6C63FF;
+}
+
+input[type=text]{
+    width: 70%;
+    border: 2px solid #473dff;
+    border-radius: 4px;
+    margin: 7px 0;
+    outline:none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+}
+  
+.select:active, input[type=text]:focus{
+    border-color: dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+button {
+    width: 160px;
+    height: 40px;
+    color: whitesmoke;
+    font-family: "Roboto", sans-serif;
+    background-color:rgb(85, 62, 231);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+button:focus, button:active, button:hover{
+    box-shadow: 0 0 20px #7d77ffa9;
+    background-color:rgb(99, 71, 255);
+    color: #fff;
+    transform: scale(1.05);
+}

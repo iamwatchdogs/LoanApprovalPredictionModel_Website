@@ -28,93 +28,94 @@
 
             <!-- Main content of the page -->
             <main>
+                <div class="container">
+                    <!-- Page Details -->
+                    <article id="page-details">
+                        <h2>Loan Approval Prediction Model</h2> <!-- Marker: Bold -->
+                        <p>This Web Based Application is processed by a Machine Learning Algorithm to  predict whether a loan would be approved or not.</p>
+                        <section class="instructions" >
+                            <h3 id="Page-Instructions">Instructions: </h3>
+                            <ul aria-labelledby="Page-Instructions">
+                                <li>Please Enter proper values for the following fields.</li>
+                                <li>Prediction Model will only work when all the following fields are filled.</li>
+                                <li>Click Predict. [NOTE: 0 means No while 1 means Yes]</li>
+                                <li>Wait for the result.</li>
+                            </ul>
+                        </section>
+                        <img src="src/undraw_predictive_analytics_re_wxt8.svg" alt="predictive analytics img">
+                    </article>
 
-                <!-- Page Details -->
-                <article id="page-details">
-                    <h2>Loan Approval Prediction Model</h2> <!-- Marker: Bold -->
-                    <p>This Web Based Application is processed by a Machine Learning Algorithm to  predict whether a loan would be approved or not.</p>
-                    <section class="instructions" >
-                        <h3 id="Page-Instructions">Instructions: </h3>
-                        <ul aria-labelledby="Page-Instructions">
-                            <li>Please Enter proper values for the following fields.</li>
-                            <li>Prediction Model will only work when all the following fields are filled.</li>
-                            <li>Click Predict. [NOTE: 0 means No while 1 means Yes]</li>
-                            <li>Wait for the result.</li>
-                        </ul>
-                    </section>
-                    <img src="src/undraw_predictive_analytics_re_wxt8.svg" alt="predictive analytics img">
-                </article>
+                    <!-- Main Form -->
+                    <div class="main-form">
+                        <form class="form-horizontal" autocomplete="off" action="/predict" method="POST">
 
-                <!-- Main Form -->
-                <div class="main-form">
-                    <form class="form-horizontal" autocomplete="off" action="/predict" method="POST">
-
-                        <label for="gender">Gender: </label> <!-- Marker: Bold -->
-                        <select class="" id="gender" name="Gender" required>
-                            <option value="" selected disabled hidden>Gender:</option>
-                            <option value="1">male</option>
-                            <option value="0">female</option>
-                        </select>
+                            <label for="gender">Gender: </label> <!-- Marker: Bold -->
+                            <select class="" id="gender" name="Gender" required>
+                                <option value="" selected disabled hidden>Gender:</option>
+                                <option value="1">male</option>
+                                <option value="0">female</option>
+                            </select>
+                            
+                            <label for="married">Marital Status: </label> <!-- Marker: Bold -->
+                            <select class="" id="married" name="Married" required>
+                                <option value="" selected disabled hidden>Married:</option>
+                                <option value="1">yes</option>
+                                <option value="0">no</option>
+                            </select>
                         
-                        <label for="married">Marital Status: </label> <!-- Marker: Bold -->
-                        <select class="" id="married" name="Married" required>
-                            <option value="" selected disabled hidden>Married:</option>
-                            <option value="1">yes</option>
-                            <option value="0">no</option>
-                        </select>
-                    
-                        <!-- <input  class="form-control" type="text" name="Dependents" placeholder="Dependents" required /> -->
-                    
-                        <label for="education">Education: </label> <!-- Marker: Bold -->
-                        <select class="" id="education" name="Education" required>
-                            <option value="" selected disabled hidden>Education:</option>
-                            <option value="1">Graduate</option>
-                            <option value="0">not Graduate</option>
-                        </select>
-
-                        <label for="employed">Employed: </label> <!-- Marker: Bold -->
-                        <select class="" id="employed" name="Self_Employed" required>
-                            <option value="" selected disabled hidden>Self Employed:</option>
-                            <option value="1">yes</option>
-                            <option value="0">no</option>
-                        </select>
-
-                        <label for="income">Income: </label> <!-- Marker: Bold -->
-                        <input  class="" type= "text" pattern="[0-9]+" id="income" name="ApplicantIncome" placeholder="Your Income" required>
-                    
-                        <label for="CoapplicantIncome">Coapplicant Income: </label> <!-- Marker: Bold -->
-                        <input  class="" type="text" pattern="[0-9]+" id="CoapplicantIncome" name="CoapplicantIncome" placeholder="Co-applicant (garantor) Income" required>
-
-                        <label for="loanamount">Loan Amount: </label> <!-- Marker: Bold -->
-                        <input  class="" type="text" pattern="[0-9]+" id="loanamount" name="LoanAmount" placeholder="Loan Amount" required>
-
-                        <label for="loanamountterm">Loan Amount Term: </label> <!-- Marker: Bold -->
-                        <select class="" id="loanamountterm" name="Loan_Amount_Term" required>
-                            <option value="" selected disabled hidden>Loan term:</option>
-                            <option value="240">6 months</option>
-                            <option value="360">12 months</option>
-                        </select>
+                            <!-- <input  class="form-control" type="text" name="Dependents" placeholder="Dependents" required /> -->
                         
-                        <label for="credithistory">Credit History: </label> <!-- Marker: Bold -->
-                        <select class="" id="credithistory" name="Credit_History" required>
-                            <option value="" selected disabled hidden>Credit History:</option>
-                            <option value="1">yes</option>
-                            <option value="0">no</option>
-                        </select>
+                            <label for="education">Education: </label> <!-- Marker: Bold -->
+                            <select class="" id="education" name="Education" required>
+                                <option value="" selected disabled hidden>Education:</option>
+                                <option value="1">Graduate</option>
+                                <option value="0">not Graduate</option>
+                            </select>
 
-                        <label for="propertyarea">Property Area: </label> <!-- Marker: Bold -->
-                        <select class="" id="propertyarea" name="Property_Area" required>
-                            <option value="" selected disabled hidden>Property_Area:</option>
-                            <option value="2">urban</option>
-                            <option value="1">semiurban</option>
-                            <option value="0">rural</option>
-                        </select>
+                            <label for="employed">Employed: </label> <!-- Marker: Bold -->
+                            <select class="" id="employed" name="Self_Employed" required>
+                                <option value="" selected disabled hidden>Self Employed:</option>
+                                <option value="1">yes</option>
+                                <option value="0">no</option>
+                            </select>
+
+                            <label for="income">Income: </label> <!-- Marker: Bold -->
+                            <input  class="" type= "text" pattern="[0-9]+" id="income" name="ApplicantIncome" placeholder="Your Income" required>
                         
-                        <div class="buttons">
-                            <button type="submit">PREDICT</button>
-                            <button type="reset">RESET</button>
-                        </div>
-                    </form>
+                            <label for="CoapplicantIncome">Coapplicant Income: </label> <!-- Marker: Bold -->
+                            <input  class="" type="text" pattern="[0-9]+" id="CoapplicantIncome" name="CoapplicantIncome" placeholder="Co-applicant (garantor) Income" required>
+
+                            <label for="loanamount">Loan Amount: </label> <!-- Marker: Bold -->
+                            <input  class="" type="text" pattern="[0-9]+" id="loanamount" name="LoanAmount" placeholder="Loan Amount" required>
+
+                            <label for="loanamountterm">Loan Amount Term: </label> <!-- Marker: Bold -->
+                            <select class="" id="loanamountterm" name="Loan_Amount_Term" required>
+                                <option value="" selected disabled hidden>Loan term:</option>
+                                <option value="240">6 months</option>
+                                <option value="360">12 months</option>
+                            </select>
+                            
+                            <label for="credithistory">Credit History: </label> <!-- Marker: Bold -->
+                            <select class="" id="credithistory" name="Credit_History" required>
+                                <option value="" selected disabled hidden>Credit History:</option>
+                                <option value="1">yes</option>
+                                <option value="0">no</option>
+                            </select>
+
+                            <label for="propertyarea">Property Area: </label> <!-- Marker: Bold -->
+                            <select class="" id="propertyarea" name="Property_Area" required>
+                                <option value="" selected disabled hidden>Property_Area:</option>
+                                <option value="2">urban</option>
+                                <option value="1">semiurban</option>
+                                <option value="0">rural</option>
+                            </select>
+                            
+                            <div class="buttons">
+                                <button type="submit">PREDICT</button>
+                                <button type="reset">RESET</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </main>
 

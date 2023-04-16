@@ -1,0 +1,178 @@
+/* Google Fonts - Nunito,Dosis */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: rgb(202, 196, 223);
+}   
+.body::before {
+    content: '';
+    background-color: #6C63FF;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    color: #000000;
+    justify-content: center;
+    font-family: 'Dosis', sans-serif;
+}
+header, main:hover + footer p {
+    display: none;
+}
+h2,h3,label,footer {
+    font-weight: bold;
+}
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+footer a:link:hover, footer a:active:hover {
+    color: #3391ff;
+}
+footer a:visited:hover {
+    color: #7a33ff;
+}
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.5em;
+}
+/* main .main-form {
+    display: flex;
+} */
+/* main #page-details img {
+    height: 255px;
+    width: 300px;
+    display: block;
+} */
+
+/* main{
+    position: relative;
+    height: 65vh;
+    width: 80vw;
+    min-width: 1100px;
+    min-height: 550px;
+    margin: 18vh auto;
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+}
+main .main-form .form-horizontal {
+    position: absolute;
+    top: -15vh;
+    right: 2vh;
+    width: 515px;
+    height: 750px;
+    width: 38vw;
+    height: 90vh;
+    min-width: 505px;
+    flex-basis: 515px;
+    flex-grow: 2;
+    flex-shrink: 5;
+    background-color: #6C63FF;
+    z-index: 10;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column wrap;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+}
+main #page-details {
+    margin: 15px 45px;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: column wrap;
+    background-color: whitesmoke;
+}
+@media (max-width: 1115px) and (min-width:680px) {
+    main {
+        min-width: none;
+    }
+    main #page-details {
+        width: 2vw;
+        flex-basis: 515px;
+        flex-shrink: 2;
+    }
+    .body::before {
+        width: 75%;
+        height: 75vh;
+    }
+} */
+.body {
+    width: 100vw;
+    height: 100vh;
+}
+.body main {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body main .container {
+    width: 80vw;
+    height: 72vh;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.25);
+    border-radius: 10px;
+}
+.body main .container #page-details {
+    width: 150vw;
+    height: 68vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-basis: 464px   ;
+    margin: 10px 80px;
+    font-size: 1.1rem;
+    position: relative;
+    right: 168px;
+}
+.body main .container #page-details img {
+    margin: 25px;
+    height: 255px;
+    width: 300px;
+    display: block;
+}
+.body main .container .main-form .form-horizontal {
+    width: 28vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #6C63FF;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.50);
+    border-radius: 12px;
+    position: relative;
+    left: 60px;
+    top: 15px;
+}

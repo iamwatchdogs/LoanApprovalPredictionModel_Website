@@ -273,7 +273,6 @@ button:focus, button:active, button:hover{
         height: 175vh;
         flex-direction: column;
         position: relative;
-        left: 17px;
         top: 45vh;
     }
     .mobile-view {

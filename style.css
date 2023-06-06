@@ -6,13 +6,50 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: color-scheme 0.7s ease,background-color 0.7s ease-in-out;
+
+}
+:root{
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+    --tery-color: rgb(202, 196, 223);
+    --arrr: drop-shadow(5px 2px 7px #5c5c61);
+    /* --primary-color: #4f4c4ce9;
+    --secondary-color: #fff; 
+    --tery-color: rgb(139, 127, 185);
+    color-scheme: dark;  */
+}
+.dark-theme{
+    --primary-color: #4f4c4ce9;
+    --secondary-color: #fff; 
+    --tery-color: rgb(139, 127, 185);
+    color-scheme: dark;
+    --arrr: drop-shadow(0px 0px 10px #edf2fc);
 }
 .mobile-view {
     display: none;
 }
+.icon{
+    filter: var(--arrr);
+}
+
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: rgb(202, 196, 223);
+    background-color: var(--tery-color);
+    overflow: hidden;
+    
+}
+#logo{
+    position: absolute;
+    width: 50px;
+    right: 20px;
+    top:10px;
+    z-index: 999;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 5px;
+    cursor: pointer;
+
 }
 .body::before {
     content: '';
@@ -31,7 +68,7 @@ footer {
     width: 100%;
     z-index: 999;
     display: flex;
-    color: #000000;
+    color: var(--secondary-color);
     justify-content: center;
     font-family: 'Dosis', sans-serif;
     opacity: 0.75;
@@ -60,7 +97,8 @@ h3 {
 }
 .body {
     width: 100vw;
-    height: 100vh;
+    height: 100vh; 
+    
 }
 .body main {
     width: 100vw;
@@ -78,7 +116,7 @@ h3 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: var(--primary-color);
     box-shadow: 0 20px 25px rgba(0,0,0,0.25);
     border-radius: 10px;
 }
@@ -95,6 +133,7 @@ h3 {
     position: relative;
     right: 5vw;
     flex-shrink: 3;
+    color: var(--secondary-color);
 }
 .body main .container #page-details img {
     height: 23vh;
@@ -117,9 +156,11 @@ h3 {
     top: 15px;
     flex-grow: 3;
     min-width: 365px;
+    color: var(--secondary-color);
 }
 
 /* CSS for Form */
+
 select {
     -webkit-appearance:none;
     -moz-appearance:none;

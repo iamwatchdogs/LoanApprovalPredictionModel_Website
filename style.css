@@ -14,10 +14,6 @@
     --secondary-color: #212121;
     --tery-color: rgb(202, 196, 223);
     --arrr: drop-shadow(5px 2px 7px #5c5c61);
-    /* --primary-color: #4f4c4ce9;
-    --secondary-color: #fff; 
-    --tery-color: rgb(139, 127, 185);
-    color-scheme: dark;  */
 }
 .dark-theme{
     --primary-color: #4f4c4ce9;

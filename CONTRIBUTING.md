@@ -1,4 +1,4 @@
-# Contribution:
+# CONTRIBUTING:
 
 Even though this was meant to be a college project and only a static front-end part with no Javascript, I think we take take it to next level. If you wish to contribute to this Repository, It's easy to get started...
 
